@@ -4,7 +4,7 @@
 
 # include"syntax_tree.h"
 
-//int n;
+int i;
 
 struct SyntreeNode * newSyntreeNode(char* name, int num, ...){
     va_list valist; 

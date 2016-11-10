@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_GRAMTREE_V1_TAB_H_INCLUDED
-# define YY_YY_GRAMTREE_V1_TAB_H_INCLUDED
+#ifndef YY_YY_SYNTAX_TAB_H_INCLUDED
+# define YY_YY_SYNTAX_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -83,12 +83,12 @@ extern int yydebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 7 "gramtree_v1.y" /* yacc.c:1909  */
+#line 7 "syntax.y" /* yacc.c:1909  */
 
-struct ast* a;
+struct SyntreeNode* node;
 double d;
 
-#line 92 "gramtree_v1.tab.h" /* yacc.c:1909  */
+#line 92 "syntax.tab.h" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -99,4 +99,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_GRAMTREE_V1_TAB_H_INCLUDED  */
+#endif /* !YY_YY_SYNTAX_TAB_H_INCLUDED  */

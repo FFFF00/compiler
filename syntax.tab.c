@@ -62,13 +62,13 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "gramtree_v1.y" /* yacc.c:339  */
+#line 1 "syntax.y" /* yacc.c:339  */
 
 #include<unistd.h>
 #include<stdio.h>   
-#include "gramtree_v1.h"
+#include "syntax_tree.h"
 
-#line 72 "gramtree_v1.tab.c" /* yacc.c:339  */
+#line 72 "syntax.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -87,9 +87,9 @@
 #endif
 
 /* In a future release of Bison, this section will be replaced
-   by #include "gramtree_v1.tab.h".  */
-#ifndef YY_YY_GRAMTREE_V1_TAB_H_INCLUDED
-# define YY_YY_GRAMTREE_V1_TAB_H_INCLUDED
+   by #include "syntax.tab.h".  */
+#ifndef YY_YY_SYNTAX_TAB_H_INCLUDED
+# define YY_YY_SYNTAX_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -141,12 +141,12 @@ extern int yydebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 7 "gramtree_v1.y" /* yacc.c:355  */
+#line 7 "syntax.y" /* yacc.c:355  */
 
-struct ast* a;
+struct SyntreeNode* node;
 double d;
 
-#line 150 "gramtree_v1.tab.c" /* yacc.c:355  */
+#line 150 "syntax.tab.c" /* yacc.c:355  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -157,11 +157,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_GRAMTREE_V1_TAB_H_INCLUDED  */
+#endif /* !YY_YY_SYNTAX_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 165 "gramtree_v1.tab.c" /* yacc.c:358  */
+#line 165 "syntax.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1333,355 +1333,355 @@ yyreduce:
   switch (yyn)
     {
         case 3:
-#line 29 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Program",1,(yyvsp[0].a));printf("printf syntax tree:\n");eval((yyval.a),0);printf("syntax tree over\n\n");}
-#line 1339 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 29 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Program",1,(yyvsp[0].node));printf("printf syntax tree:\n");generate((yyval.node),0);printf("syntax tree over\n\n");}
+#line 1339 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 31 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDefList",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1345 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 31 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDefList",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1345 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 32 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDefList",0,-1);}
-#line 1351 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 32 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDefList",0,-1);}
+#line 1351 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 34 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDef",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1357 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 34 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDef",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1357 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 35 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDef",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1363 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 35 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDef",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1363 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 36 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDef",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1369 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 36 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDef",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1369 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 38 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDecList",1,(yyvsp[0].a));}
-#line 1375 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 38 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDecList",1,(yyvsp[0].node));}
+#line 1375 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
-#line 39 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ExtDecList",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1381 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 39 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ExtDecList",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1381 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 42 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Specifire",1,(yyvsp[0].a));}
-#line 1387 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 42 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Specifire",1,(yyvsp[0].node));}
+#line 1387 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 43 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Specifire",1,(yyvsp[0].a));}
-#line 1393 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 43 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Specifire",1,(yyvsp[0].node));}
+#line 1393 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 45 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("StructSpecifire",5,(yyvsp[-4].a),(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1399 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 45 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("StructSpecifire",5,(yyvsp[-4].node),(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1399 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 46 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("StructSpecifire",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1405 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 46 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("StructSpecifire",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1405 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 48 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("OptTag",1,(yyvsp[0].a));}
-#line 1411 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 48 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("OptTag",1,(yyvsp[0].node));}
+#line 1411 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 49 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("OptTag",0,-1);}
-#line 1417 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 49 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("OptTag",0,-1);}
+#line 1417 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 51 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Tag",1,(yyvsp[0].a));}
-#line 1423 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 51 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Tag",1,(yyvsp[0].node));}
+#line 1423 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 54 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("VarDec",1,(yyvsp[0].a));}
-#line 1429 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 54 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("VarDec",1,(yyvsp[0].node));}
+#line 1429 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 55 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("VarDec",4,(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1435 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 55 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("VarDec",4,(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1435 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 57 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("FunDec",4,(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1441 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 57 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("FunDec",4,(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1441 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 58 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("FunDec",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1447 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 58 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("FunDec",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1447 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 60 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("VarList",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1453 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 60 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("VarList",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1453 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 61 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("VarList",1,(yyvsp[0].a));}
-#line 1459 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 61 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("VarList",1,(yyvsp[0].node));}
+#line 1459 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 63 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("ParamDec",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1465 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 63 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("ParamDec",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1465 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 67 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Compst",4,(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1471 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 67 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Compst",4,(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1471 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 69 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("StmtList",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1477 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 69 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("StmtList",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1477 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 70 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("StmtList",0,-1);}
-#line 1483 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 70 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("StmtList",0,-1);}
+#line 1483 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 72 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Stmt",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1489 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 72 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Stmt",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1489 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 73 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Stmt",1,(yyvsp[0].a));}
-#line 1495 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 73 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Stmt",1,(yyvsp[0].node));}
+#line 1495 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 74 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Stmt",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1501 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 74 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Stmt",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1501 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 75 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Stmt",5,(yyvsp[-4].a),(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1507 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 75 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Stmt",5,(yyvsp[-4].node),(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1507 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 76 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Stmt",7,(yyvsp[-6].a),(yyvsp[-5].a),(yyvsp[-4].a),(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1513 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 76 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Stmt",7,(yyvsp[-6].node),(yyvsp[-5].node),(yyvsp[-4].node),(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1513 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 77 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Stmt",5,(yyvsp[-4].a),(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1519 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 77 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Stmt",5,(yyvsp[-4].node),(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1519 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 80 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("DefList",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1525 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 80 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("DefList",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1525 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 81 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("DefList",0,-1);}
-#line 1531 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 81 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("DefList",0,-1);}
+#line 1531 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 83 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Def",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1537 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 83 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Def",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1537 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 85 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("DecList",1,(yyvsp[0].a));}
-#line 1543 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 85 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("DecList",1,(yyvsp[0].node));}
+#line 1543 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 86 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("DecList",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1549 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 86 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("DecList",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1549 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 88 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Dec",1,(yyvsp[0].a));}
-#line 1555 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 88 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Dec",1,(yyvsp[0].node));}
+#line 1555 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 40:
-#line 89 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Dec",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1561 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 89 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Dec",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1561 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 92 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1567 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 92 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1567 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 93 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1573 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 93 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1573 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 94 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1579 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 94 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1579 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 95 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1585 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 95 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1585 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 96 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1591 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 96 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1591 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 97 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1597 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 97 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1597 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 98 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1603 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 98 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1603 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 99 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1609 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 99 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1609 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 100 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1615 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 100 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1615 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 101 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1621 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 101 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1621 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 102 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",2,(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1627 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 102 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",2,(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1627 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 103 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",4,(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1633 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 103 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",4,(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1633 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 104 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1639 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 104 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1639 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 105 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",4,(yyvsp[-3].a),(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1645 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 105 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",4,(yyvsp[-3].node),(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1645 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 106 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1651 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 106 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1651 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 107 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",1,(yyvsp[0].a));}
-#line 1657 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 107 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",1,(yyvsp[0].node));}
+#line 1657 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 108 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",1,(yyvsp[0].a));}
-#line 1663 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 108 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",1,(yyvsp[0].node));}
+#line 1663 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 109 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Exp",1,(yyvsp[0].a));}
-#line 1669 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 109 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Exp",1,(yyvsp[0].node));}
+#line 1669 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 111 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Args",3,(yyvsp[-2].a),(yyvsp[-1].a),(yyvsp[0].a));}
-#line 1675 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 111 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Args",3,(yyvsp[-2].node),(yyvsp[-1].node),(yyvsp[0].node));}
+#line 1675 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 112 "gramtree_v1.y" /* yacc.c:1646  */
-    {(yyval.a)=newast("Args",1,(yyvsp[0].a));}
-#line 1681 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 112 "syntax.y" /* yacc.c:1646  */
+    {(yyval.node) = newSyntreeNode("Args",1,(yyvsp[0].node));}
+#line 1681 "syntax.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1685 "gramtree_v1.tab.c" /* yacc.c:1646  */
+#line 1685 "syntax.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1909,4 +1909,5 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 114 "gramtree_v1.y" /* yacc.c:1906  */
+#line 114 "syntax.y" /* yacc.c:1906  */
+

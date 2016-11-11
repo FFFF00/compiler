@@ -1,4 +1,4 @@
-int inc()
+int in()
 {
     int i=1;
     float j;

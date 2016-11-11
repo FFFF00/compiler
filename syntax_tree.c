@@ -21,20 +21,19 @@ struct SyntreeNode * newSyntreeNode(char* name, int num, ...){
 
 	int i;
         if(num >= 2){//¿¿¿¿¿¿
-            for(i = 0; i < num-1; i++){
+            for(i = 1; i < num; i++){
                 temp->rightchild = va_arg(valist, struct SyntreeNode *);
                 temp = temp->rightchild;
             }
         }
-    }else {//¿¿¿¿
+    }else {//¿¿0
         int t = va_arg(valist, int); 
-        node->line = t;
+        node->line = t;//¿¿¿
         if((!strcmp(node->name, "ID" ))||(!strcmp(node->name, "TYPE" ))){//¿¿¿¿¿¿ID,TYPE,INTEGER
-            char * t; t = (char *)malloc(sizeof(char* ) * 40);
+            char* t = (char *)malloc(sizeof(char* ) * 64);
 	    strcpy(t, yytext);
 	    node->idtype = t;
-    	}
-        else if(!strcmp(node->name, "INTEGER")) {//¿¿¿¿¿¿¿¿¿¿
+    	}else if(!strcmp(node->name, "INTEGER")) {//¿¿¿¿¿¿¿¿¿¿
 	    node->intgr = atoi(yytext);
 	}
     }
@@ -54,10 +53,11 @@ void generate(struct SyntreeNode * node,int level){
         }
         printf("\n");
 
-        generate(node->leftchild, level + 1);//¿¿¿
-        generate(node->rightchild, level);//¿¿¿
+        generate(node->leftchild, level + 1);//¿¿¿¿¿¿¿
+        generate(node->rightchild, level);//¿¿¿¿¿¿¿
     }
 }
+
 void yyerror(char* s, ...){
     va_list ap;
     va_start(ap, s);
@@ -65,6 +65,7 @@ void yyerror(char* s, ...){
     vfprintf(stderr, s, ap);
     fprintf(stderr, "\n");
 }
+
 int main(){
     printf(">");
     return yyparse(); 

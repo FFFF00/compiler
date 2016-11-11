@@ -15,7 +15,7 @@ PLUS \+
 MINUS -
 INTEGER [1-9]+[0-9]*|0 
 FLOAT   [0-9]+\.[0-9]*  
-ID [node-z_A-Z][node-zA-Z_0-9]*
+ID [a-z_A-Z][a-zA-Z_0-9]*
 SPACE [ \t\r]*
 EOL \n
 SEMI ;

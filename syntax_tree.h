@@ -1,5 +1,6 @@
 extern int yylineno;
 extern char * yytext;
+void yyerror(char* s, ...);
 
 struct SyntreeNode{
     int line;
